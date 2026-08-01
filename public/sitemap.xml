@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.larisaarinen.fi/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.larisaarinen.fi/asunnon-myynti</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.larisaarinen.fi/palvelut</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.larisaarinen.fi/ostotoimeksianto</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.larisaarinen.fi/vuokrauspalvelu</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.larisaarinen.fi/kohteet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.larisaarinen.fi/asiakaspalautteet</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.larisaarinen.fi/minusta</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.larisaarinen.fi/toiminta-alueet</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.larisaarinen.fi/oppaat</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.larisaarinen.fi/oppaat/mista-erottaa-hyvan-valittajan</loc><priority>0.5</priority></url>
+  <url><loc>https://www.larisaarinen.fi/oppaat/omistus-vuokra-vai-valinnainen-vuokratontti</loc><priority>0.5</priority></url>
+  <url><loc>https://www.larisaarinen.fi/oppaat/putkiremontti-tulossa-uskallanko-ostaa</loc><priority>0.5</priority></url>
+  <url><loc>https://www.larisaarinen.fi/oppaat/hintojen-kehitys-pk-seutu-vs-muu-suomi</loc><priority>0.4</priority></url>
+  <url><loc>https://www.larisaarinen.fi/oppaat/laajasalo-asuntokanta-ja-hintakatsaus</loc><priority>0.4</priority></url>
+  <url><loc>https://www.larisaarinen.fi/oppaat/milta-nayttaa-tulevaisuuden-laajasalo</loc><priority>0.4</priority></url>
+  <url><loc>https://www.larisaarinen.fi/ota-yhteytta</loc><changefreq>yearly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.larisaarinen.fi/tietosuoja</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+</urlset>
