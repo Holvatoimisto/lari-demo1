@@ -1,0 +1,146 @@
+/* Typografia: Lato (display, 700/400) + Instrument Sans (sans, 400/500/600).
+   Itseisännöidyt Google Fonts WOFF2-tiedostot @fontsource-paketeista,
+   font-display: swap. Suomen merkistö (äöåÄÖÅ) varmistettu latin-subsetista. */
+@import '@fontsource/lato/400.css';
+@import '@fontsource/lato/700.css';
+@import '@fontsource/instrument-sans/400.css';
+@import '@fontsource/instrument-sans/500.css';
+@import '@fontsource/instrument-sans/600.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Lari Saarinen — design tokens (Zansen-yhteensopiva, lämmin premium) */
+    --background: 40 33% 97%;          /* #FAF7F1 lämmin luonnonvalkoinen */
+    --foreground: 170 14% 12%;         /* #1B2522 lämmin hiili */
+    --card: 40 33% 99%;
+    --card-foreground: 170 14% 12%;
+    --popover: 40 33% 99%;
+    --popover-foreground: 170 14% 12%;
+    --primary: 208 66% 12%;            /* #0B1F33 Larin tummansininen */
+    --primary-foreground: 42 40% 96%;
+    --secondary: 40 24% 92%;           /* #F1EAE0 hiekansävy */
+    --secondary-foreground: 208 60% 15%;
+    --muted: 40 18% 93%;
+    --muted-foreground: 210 9% 40%;
+    --accent: 38 44% 61%;              /* #C9A96B hillitty samppanja */
+    --accent-foreground: 208 70% 8%;
+    --destructive: 0 72% 44%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 14% 86%;
+    --input: 40 12% 82%;
+    --ring: 208 55% 28%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  :root {
+    /* Typografiatokenit — keskitetysti, ei hardkoodattuja font-familyjä
+       komponenteissa. */
+    --font-display: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-sans: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "ss01", "cv05";
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.012em;
+  }
+  ::selection {
+    background: hsl(208 66% 12% / 0.16);
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8 lg:px-12;
+  }
+  .eyebrow {
+    /* Micro-label: sentence case, ei uppercase-koristetta. Käytä vain kun kantaa informaatiota. */
+    @apply text-[0.8rem] font-medium tracking-[0.05em] text-primary/75;
+  }
+  .eyebrow-dark {
+    @apply text-[0.8rem] font-medium tracking-[0.05em] text-[#EDE6D8]/90;
+  }
+  .lead {
+    @apply text-lg font-normal leading-[1.65] text-muted-foreground;
+  }
+  .link-quiet {
+    @apply underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary px-7 py-3.5 text-[0.95rem] font-medium tracking-[-0.005em] text-primary-foreground shadow-[0_10px_30px_-12px_hsl(208_66%_12%/0.55)] transition-all hover:bg-[hsl(208_70%_8%)] hover:shadow-[0_14px_34px_-12px_hsl(208_66%_12%/0.65)] focus-visible:outline-2 active:translate-y-px;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-foreground/15 bg-transparent px-7 py-3.5 text-[0.95rem] font-medium tracking-[-0.005em] text-foreground transition-all hover:border-foreground/35 hover:bg-foreground/[0.03] active:translate-y-px;
+  }
+  .btn-ghost-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3.5 text-[0.95rem] font-medium tracking-[-0.005em] text-white transition-all hover:border-white/50 hover:bg-white/5;
+  }
+  .section-pad {
+    @apply py-16 sm:py-20;
+  }
+  .section-compact {
+    @apply py-8 sm:py-12;
+  }
+  .section-standard {
+    @apply py-12 sm:py-20;
+  }
+  .section-emotional {
+    @apply py-16 sm:py-28;
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+}
+
+/* Hillityt reveal-animaatiot — vain medialle ja isoille lohkoille (B-21) */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Carousel-ohjainten pisteet */
+.review-dot[aria-current="true"] {
+  background: hsl(var(--primary));
+  width: 1.6rem;
+}
